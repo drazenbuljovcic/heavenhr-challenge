@@ -6,8 +6,13 @@ const PaginationControls = props => (
   <div>
     <ul className="pagination">
       <li>
+        <button href="#" className="btn btn-default" aria-label="Previous" onClick={props.handlePaginationToFirstPage}>
+          <i className="fa fa-fast-backward" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li>
         <button href="#" className="btn btn-default" aria-label="Previous" onClick={props.handlePaginationToPreviousPage}>
-          <span aria-hidden="true">&laquo;</span>
+          <i className="fa fa-step-backward" aria-hidden="true"></i>
         </button>
       </li>
       {
@@ -21,7 +26,12 @@ const PaginationControls = props => (
       }
       <li>
         <button href="#" className="btn btn-default" aria-label="Next" onClick={props.handlePaginationToNextPage}>
-          <span aria-hidden="true">&raquo;</span>
+        <i className="fa fa-step-forward" aria-hidden="true"></i>
+        </button>
+      </li>
+      <li>
+        <button href="#" className="btn btn-default" aria-label="Next" onClick={props.handlePaginationToLastPage}>
+          <i className="fa fa-fast-forward" aria-hidden="true"></i>
         </button>
       </li>
     </ul>

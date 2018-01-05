@@ -14,6 +14,8 @@ class FriendList extends Component {
     this.handlePaginationToNextPage = this.handlePaginationToNextPage.bind(this);
     this.handlePaginationToPreviousPage = this.handlePaginationToPreviousPage.bind(this);
     this.handlePaginationToPageNumber = this.handlePaginationToPageNumber.bind(this);
+    this.handlePaginationToFirstPage = this.handlePaginationToFirstPage.bind(this);
+    this.handlePaginationToLastPage = this.handlePaginationToLastPage.bind(this);
   }
 
   componentWillMount() {
@@ -33,7 +35,15 @@ class FriendList extends Component {
   }
   //#endregion
 
-  //#region MARK: Pagination navigation handlers
+  //#region MARK: Pagination navigation handlers4
+  handlePaginationToFirstPage() {
+    this.props.changePaginationPage(0);
+  }
+  
+  handlePaginationToLastPage() {
+    this.props.changePaginationPage(this.props.friendListInfo.paginationInfo.totalPages - 1);
+  }
+
   handlePaginationToNextPage() {
     this.props.changePaginationPage(this.props.friendListInfo.paginationInfo.currentPage + 1);
   }
@@ -72,6 +82,8 @@ class FriendList extends Component {
         <PaginationControls
           totalPages={paginationInfo.totalPages}
           currentPage={paginationInfo.currentPage}
+          handlePaginationToFirstPage={this.handlePaginationToFirstPage}
+          handlePaginationToLastPage={this.handlePaginationToLastPage}
           handlePaginationToNextPage={this.handlePaginationToNextPage}
           handlePaginationToPreviousPage={this.handlePaginationToPreviousPage}
           handlePaginationToPageNumber={this.handlePaginationToPageNumber}
