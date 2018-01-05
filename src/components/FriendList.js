@@ -1,6 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-import styles from './FriendList.css';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
+
 import FriendListItem from './FriendListItem';
+
+import styles from './FriendList.css';
 
 class FriendList extends Component {
   render () {
@@ -13,6 +16,7 @@ class FriendList extends Component {
                 key={index}
                 id={index}
                 name={friend.name}
+                gender={friend.gender}
                 starred={friend.starred}
                 {...this.props.actions} />
             );
@@ -21,7 +25,6 @@ class FriendList extends Component {
       </ul>
     );
   }
-
 }
 
 FriendList.propTypes = {

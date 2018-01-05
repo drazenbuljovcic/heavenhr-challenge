@@ -13,6 +13,11 @@ const initialState = {
     {
       name: 'George Washington',
       starred: false
+    },
+    {
+      name: 'Dražen Buljovčić',
+      starred: false,
+      gender: 'male',
     }
   ]
 };
@@ -25,7 +30,8 @@ export default function friends(state = initialState, action) {
         friendsById: [
           ...state.friendsById,
           {
-            name: action.name
+            name: action.payload.name,
+            gender: action.payload.gender,
           }
         ],
       };

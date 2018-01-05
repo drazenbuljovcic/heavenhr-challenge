@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styles from './FriendListApp.css';
 import { connect } from 'react-redux';
 
-import {addFriend, deleteFriend, starFriend} from '../actions/FriendsActions';
-import { FriendList, AddFriendInput } from '../components';
+import { addFriend, deleteFriend, starFriend } from '../actions/FriendsActions';
+import { FriendList, AddFriendForm } from '../components';
 
 class FriendListApp extends Component {
 
@@ -19,7 +19,7 @@ class FriendListApp extends Component {
     return (
       <div className={styles.friendListApp}>
         <h1>The FriendList</h1>
-        <AddFriendInput addFriend={actions.addFriend} />
+        <AddFriendForm addFriend={actions.addFriend} />
         <FriendList friends={friendsById} actions={actions} />
       </div>
     );

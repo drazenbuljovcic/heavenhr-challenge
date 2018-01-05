@@ -1,14 +1,21 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
+
 import classnames from 'classnames';
 import styles from './FriendListItem.css';
 
 class FriendListItem extends Component {
-
   render() {
     return (
       <li className={styles.friendListItem}>
         <div className={styles.friendInfos}>
-          <div><span>{this.props.name}</span></div>
+          <div>
+            <span>{this.props.name}</span>
+            <i className={classnames('fa', {
+              'fa-male': this.props.gender === 'male',
+              'fa-female': this.props.gender === 'female'
+            })} aria-hidden="true" />
+          </div>
           <div>
             <small>xx friends in common</small>
           </div>
@@ -29,14 +36,18 @@ class FriendListItem extends Component {
       </li>
     );
   }
-
 }
 
 FriendListItem.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
+  gender: PropTypes.string,
   starred: PropTypes.bool,
   starFriend: PropTypes.func.isRequired
 };
+
+FriendListItem.defaultProps = {
+  gender: '',
+}
 
 export default FriendListItem
