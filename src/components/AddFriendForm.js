@@ -33,13 +33,12 @@ class AddFriendForm extends Component {
     e.preventDefault();
     
     if(!this.state.name) { return; }
-    if(!this.state.gender) { return; }
 
     this.props.addFriend(this.state.name, this.state.gender);
 
     e.target.reset();
     this.input.focus();
-    this.setState({ name: '', gender: '', });
+    this.setState({ name: '', gender: '' });
   }
   //#endregion
 
