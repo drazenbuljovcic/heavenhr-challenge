@@ -20,3 +20,11 @@ export function starFriend(id) {
     id
   };
 }
+
+export function refreshPaginationInfo(friendList, itemCount) {
+  return { type: types.REFRESH_PAGINATION, payload: { friendList, itemCount } }
+}
+
+export function changePaginationPage(pageNumber) {
+  return { type: types.CHANGE_PAGINATION_PAGE, pageNumber };
+}

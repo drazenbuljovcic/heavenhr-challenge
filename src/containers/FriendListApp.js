@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
-import styles from './FriendListApp.css';
 import { connect } from 'react-redux';
 
-import { addFriend, deleteFriend, starFriend } from '../actions/FriendsActions';
+import styles from './FriendListApp.css';
+
+import { 
+  addFriend,
+  deleteFriend,
+  starFriend,
+  refreshPaginationInfo,
+  changePaginationPage,
+} from '../actions/FriendsActions';
+
 import { FriendList, AddFriendForm } from '../components';
+
+import { ITEM_COUNT } from '../constants/FriendListPagination';
 
 class FriendListApp extends Component {
 
   render () {
-    const { friendlist: { friendsById }} = this.props;
+    const { friendlist } = this.props;
 
     const actions = {
       addFriend: this.props.addFriend,
@@ -20,7 +30,12 @@ class FriendListApp extends Component {
       <div className={styles.friendListApp}>
         <h1>The FriendList</h1>
         <AddFriendForm addFriend={actions.addFriend} />
-        <FriendList friends={friendsById} actions={actions} />
+        <FriendList
+          listItemCountPerPage={ITEM_COUNT}
+          refreshPaginationInfo={this.props.refreshPaginationInfo}
+          changePaginationPage={this.props.changePaginationPage}
+          friendListInfo={friendlist}
+          actions={actions} />
       </div>
     );
   }
@@ -33,5 +48,7 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, {
   addFriend,
   deleteFriend,
-  starFriend
+  starFriend,
+  refreshPaginationInfo,
+  changePaginationPage,
 })(FriendListApp)
