@@ -9,9 +9,11 @@ export default class PaginationControls extends React.Component {
 
     this.handlePaginationToNextPage = this.handlePaginationToNextPage.bind(this);
     this.handlePaginationToPreviousPage = this.handlePaginationToPreviousPage.bind(this);
+    this.handlePaginationToPageNumber = this.handlePaginationToPageNumber.bind(this);
   }
   //#endregion
 
+  //# MARK: Pagination navigation handlers
   handlePaginationToNextPage() {
     const { currentPage, changePaginationPage } = this.props;
 
@@ -24,28 +26,33 @@ export default class PaginationControls extends React.Component {
     changePaginationPage(currentPage- 1);
   }
 
+  handlePaginationToPageNumber(pageNumber) {
+    this.props.changePaginationPage(pageNumber);
+  }
+  //#endregion
+
   render() {
     return (
       <div>
         <ul className="pagination">
           <li>
-            <a href="#" className="btn btn-default" aria-label="Previous" onClick={this.handlePaginationToPreviousPage}>
+            <button href="#" className="btn btn-default" aria-label="Previous" onClick={this.handlePaginationToPreviousPage}>
               <span aria-hidden="true">&laquo;</span>
-            </a>
+            </button>
           </li>
           {
             times(this.props.totalPages, (i) => (
               <li key={i}>
-                <a href="#" className="btn btn-default">
+                <button href="#" className="btn btn-default" onClick={this.handlePaginationToPageNumber.bind(null, i)}>
                   {i + 1}
-                </a>
+                </button>
               </li>
             ))
           }
           <li>
-            <a href="#" className="btn btn-default" aria-label="Next" onClick={this.handlePaginationToNextPage}>
+            <button href="#" className="btn btn-default" aria-label="Next" onClick={this.handlePaginationToNextPage}>
               <span aria-hidden="true">&raquo;</span>
-            </a>
+            </button>
           </li>
         </ul>
       </div>

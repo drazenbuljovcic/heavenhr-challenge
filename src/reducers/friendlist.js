@@ -1,23 +1,25 @@
 import * as types from '../constants/ActionTypes';
-import { ITEM_COUNT } from '../constants/FriendListPagination';
-
 import { cloneDeep } from 'lodash';
 
 const initialState = {
   friendsById: [
     {
+      id: Math.round(Math.random() * 10000000),
       name: 'Theodore Roosevelt',
       starred: true
     },
     {
+      id: Math.round(Math.random() * 10000000),
       name: 'Abraham Lincoln',
       starred: false
     },
     {
+      id: Math.round(Math.random() * 10000000),
       name: 'George Washington',
       starred: false
     },
     {
+      id: Math.round(Math.random() * 10000000),
       name: 'Dražen Buljovčić',
       starred: false,
       gender: 'male',
@@ -36,32 +38,24 @@ export default function friends(state = initialState, action) {
   
   switch (action.type) {
     case types.ADD_FRIEND:
-      return {
-        ...state,
-        friendsById: [
-          ...state.friendsById,
-          {
-            name: action.payload.name,
-            gender: action.payload.gender,
-          }
-        ],
-      };
+      newState.friendsById.push({
+        id: Math.round(Math.random() * 10000000),
+        name: action.payload.name,
+        gender: action.payload.gender,
+      });
+
+      return newState;
     case types.DELETE_FRIEND:
       return {
         ...state,
-        friendsById: state.friendsById.filter((item, index) => index !== action.id)
+        friendsById: state.friendsById.filter((item) => item.id !== action.id)
       };
     case types.STAR_FRIEND:
-      let friends = [...state.friendsById];
-      let friend = friends.find((item, index) => index === action.id);
-      friend.starred = !friend.starred;
-      return {
-        ...state,
-        friendsById: friends
-      };
-    
+      const friendIndex = newState.friendsById.findIndex((item) => item.id === action.id);
+      newState.friendsById[friendIndex].starred = !newState.friendsById[friendIndex].starred;
+      
+      return newState;
     case types.REFRESH_PAGINATION:
-      const { itemCount, currentPage } = newState.paginationInfo;
       const { friendList: list, itemCount: newItemCount } = action.payload;
 
       if (!newItemCount) {
@@ -75,7 +69,7 @@ export default function friends(state = initialState, action) {
       }
 
       newState.paginationInfo.itemCount = newItemCount;
-      newState.paginationInfo.currentPage = 0;
+      // newState.paginationInfo.currentPage = 0;
       const start = newItemCount * newState.paginationInfo.currentPage;
 
       newState.paginationInfo.totalPages = Math.ceil(list.length / newItemCount);
