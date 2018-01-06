@@ -1,7 +1,16 @@
 import * as types from '../constants/ActionTypes';
 import { cloneDeep } from 'lodash';
 
-const initialState = {
+export const defaultPaginationState = {
+  startingItemIndex: 0,
+  endingItemIndex: 0,
+  itemCount: 0,
+  currentPage: 0,
+  currentPageFriendsList: [],
+  totalPages: 0,
+};
+
+export const initialState = {
   friendsById: [
     {
       id: Math.round(Math.random() * 10000000),
@@ -28,14 +37,7 @@ const initialState = {
       gender: 'male',
     }
   ],
-  paginationInfo: {
-    startingItemIndex: 0,
-    endingItemIndex: 0,
-    itemCount: 0,
-    currentPage: 0,
-    currentPageFriendsList: [],
-    totalPages: 0,
-  }
+  paginationInfo: defaultPaginationState,
 };
 
 export default function friends(state = initialState, action) {
@@ -47,6 +49,7 @@ export default function friends(state = initialState, action) {
         id: Math.round(Math.random() * 10000000),
         name: action.payload.name,
         gender: action.payload.gender,
+        starred: false,
       });
 
       return newState;
@@ -64,12 +67,7 @@ export default function friends(state = initialState, action) {
       const { friendList: list, itemCount: newItemCount } = action.payload;
 
       if (!newItemCount) {
-        newState.paginationInfo = {
-          itemCount: 0,
-          currentPage: 0,
-          currentPageFriendsList: [],
-          totalPages: 0,
-        };
+        newState.paginationInfo = defaultPaginationState;
         return newState;
       }
 
