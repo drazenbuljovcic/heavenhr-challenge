@@ -58,7 +58,7 @@ export default function friends(state = initialState, action) {
       
       return newState;
     case types.REFRESH_PAGINATION:
-      const { friendList: list, itemCount: newItemCount } = action.payload;
+      const { friendList: list, itemCount: newItemCount, changePaginationPage } = action.payload;
 
       if (!newItemCount) {
         newState.paginationInfo = {
@@ -83,7 +83,6 @@ export default function friends(state = initialState, action) {
 
       newState.paginationInfo.totalPages = Math.ceil(list.length / newItemCount);
       newState.paginationInfo.currentPageFriendsList = list.slice(start, newState.paginationInfo.endingItemIndex);
-
       return newState;
     case types.CHANGE_PAGINATION_PAGE:
       const { pageNumber } = action;
