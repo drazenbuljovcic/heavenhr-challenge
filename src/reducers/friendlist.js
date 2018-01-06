@@ -26,6 +26,8 @@ const initialState = {
     }
   ],
   paginationInfo: {
+    startingItemIndex: 0,
+    endingItemIndex: 0,
     itemCount: 0,
     currentPage: 0,
     currentPageFriendsList: [],
@@ -69,11 +71,12 @@ export default function friends(state = initialState, action) {
       }
 
       newState.paginationInfo.itemCount = newItemCount;
-      // newState.paginationInfo.currentPage = 0;
       const start = newItemCount * newState.paginationInfo.currentPage;
 
+      newState.paginationInfo.startingItemIndex = start + 1;
+      newState.paginationInfo.endingItemIndex = start + newItemCount;
       newState.paginationInfo.totalPages = Math.ceil(list.length / newItemCount);
-      newState.paginationInfo.currentPageFriendsList = list.slice(start, start + newItemCount);
+      newState.paginationInfo.currentPageFriendsList = list.slice(start, newState.paginationInfo.endingItemIndex);
 
       return newState;
     case types.CHANGE_PAGINATION_PAGE:
@@ -85,8 +88,16 @@ export default function friends(state = initialState, action) {
       newState.paginationInfo.currentPage = pageNumber;
 
       const startIndex = newState.paginationInfo.itemCount * newState.paginationInfo.currentPage;
+      newState.paginationInfo.startingItemIndex = startIndex + 1;
 
-      newState.paginationInfo.currentPageFriendsList = newState.friendsById.slice(startIndex, startIndex + newState.paginationInfo.itemCount);
+      newState.paginationInfo.endingItemIndex = startIndex + newState.paginationInfo.itemCount;
+      const difference = newState.paginationInfo.endingItemIndex > newState.friendsById.length ? newState.paginationInfo.endingItemIndex - newState.friendsById.length : 0;
+
+      if(difference) {
+        newState.paginationInfo.endingItemIndex -= difference;
+      }
+
+      newState.paginationInfo.currentPageFriendsList = newState.friendsById.slice(startIndex, newState.paginationInfo.endingItemIndex);
       return newState;
     default:
       return state;

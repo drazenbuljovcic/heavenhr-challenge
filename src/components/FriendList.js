@@ -83,7 +83,6 @@ class FriendList extends Component {
           totalPages={paginationInfo.totalPages}
           currentPage={paginationInfo.currentPage}
           totalCount={friendsById.length}
-          itemsPerPage={paginationInfo.itemCount}
           startingItemIndex={paginationInfo.startingItemIndex}
           endingItemIndex={paginationInfo.endingItemIndex}
           handlePaginationToFirstPage={this.handlePaginationToFirstPage}

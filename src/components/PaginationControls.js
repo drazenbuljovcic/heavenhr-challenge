@@ -55,12 +55,16 @@ const PaginationControls = props => (
         </button>
       </li>
     </ul>
+    <p className={styles.paginationLegend}>Showing <strong>{props.startingItemIndex} - {props.endingItemIndex}</strong> out of <strong>{props.totalCount}</strong></p>
   </div>
 );
 
 PaginationControls.propTypes = {
   totalPages: PropTypes.number.isRequired,
   currentPage: PropTypes.number.isRequired,
+  totalCount: PropTypes.number.isRequired,
+  startingItemIndex: PropTypes.number.isRequired,
+  endingItemIndex: PropTypes.number.isRequired,
   handlePaginationToNextPage: PropTypes.func.isRequired,
   handlePaginationToPreviousPage: PropTypes.func.isRequired,
   handlePaginationToPageNumber: PropTypes.func.isRequired,
