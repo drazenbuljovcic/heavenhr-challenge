@@ -1,1 +1,1 @@
-export const ITEM_COUNT = 2;
+export const ITEM_COUNT = 3;

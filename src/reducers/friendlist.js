@@ -75,6 +75,12 @@ export default function friends(state = initialState, action) {
 
       newState.paginationInfo.startingItemIndex = start + 1;
       newState.paginationInfo.endingItemIndex = start + newItemCount;
+      
+      const differences = newState.paginationInfo.endingItemIndex > newState.friendsById.length ? newState.paginationInfo.endingItemIndex - newState.friendsById.length : 0;
+      if(differences) {
+        newState.paginationInfo.endingItemIndex -= differences;
+      }
+
       newState.paginationInfo.totalPages = Math.ceil(list.length / newItemCount);
       newState.paginationInfo.currentPageFriendsList = list.slice(start, newState.paginationInfo.endingItemIndex);
 
@@ -91,8 +97,8 @@ export default function friends(state = initialState, action) {
       newState.paginationInfo.startingItemIndex = startIndex + 1;
 
       newState.paginationInfo.endingItemIndex = startIndex + newState.paginationInfo.itemCount;
+      
       const difference = newState.paginationInfo.endingItemIndex > newState.friendsById.length ? newState.paginationInfo.endingItemIndex - newState.friendsById.length : 0;
-
       if(difference) {
         newState.paginationInfo.endingItemIndex -= difference;
       }
