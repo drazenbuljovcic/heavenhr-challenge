@@ -29,7 +29,7 @@ class FriendList extends Component {
     const nextFriendsList = nextProps.friendListInfo.friendsById;
     const oldFriendsList = this.props.friendListInfo.friendsById;
 
-    if(nextProps.friendListInfo.paginationInfo.totalPages === nextProps.friendListInfo.paginationInfo.currentPage) {
+    if(nextProps.friendListInfo.paginationInfo.totalPages === nextProps.friendListInfo.paginationInfo.currentPage && nextProps.friendListInfo.paginationInfo.totalPages > 1) {
       this.handlePaginationToPreviousPage(); return;
     }
 
