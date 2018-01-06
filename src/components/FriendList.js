@@ -83,18 +83,20 @@ class FriendList extends Component {
             })
           }
         </ul>
-        <PaginationControls
-          totalPages={paginationInfo.totalPages}
-          currentPage={paginationInfo.currentPage}
-          totalCount={friendsById.length}
-          startingItemIndex={paginationInfo.startingItemIndex}
-          endingItemIndex={paginationInfo.endingItemIndex}
-          handlePaginationToFirstPage={this.handlePaginationToFirstPage}
-          handlePaginationToLastPage={this.handlePaginationToLastPage}
-          handlePaginationToNextPage={this.handlePaginationToNextPage}
-          handlePaginationToPreviousPage={this.handlePaginationToPreviousPage}
-          handlePaginationToPageNumber={this.handlePaginationToPageNumber}
-        />
+        { friendsById.length > itemCount && (
+          <PaginationControls
+            totalPages={paginationInfo.totalPages}
+            currentPage={paginationInfo.currentPage}
+            totalCount={friendsById.length}
+            startingItemIndex={paginationInfo.startingItemIndex}
+            endingItemIndex={paginationInfo.endingItemIndex}
+            handlePaginationToFirstPage={this.handlePaginationToFirstPage}
+            handlePaginationToLastPage={this.handlePaginationToLastPage}
+            handlePaginationToNextPage={this.handlePaginationToNextPage}
+            handlePaginationToPreviousPage={this.handlePaginationToPreviousPage}
+            handlePaginationToPageNumber={this.handlePaginationToPageNumber}
+          />
+        )}
       </div>
     );
   }
