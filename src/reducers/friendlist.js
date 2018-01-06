@@ -61,7 +61,7 @@ export default function friends(state = initialState, action) {
       
       return newState;
     case types.REFRESH_PAGINATION:
-      const { friendList: list, itemCount: newItemCount, changePaginationPage } = action.payload;
+      const { friendList: list, itemCount: newItemCount } = action.payload;
 
       if (!newItemCount) {
         newState.paginationInfo = {
