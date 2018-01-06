@@ -1,0 +1,6 @@
+exports[`Friend List should match it's empty snapshot 1`] = `
+<div>
+  <ul
+    className={undefined} />
+</div>
+`;

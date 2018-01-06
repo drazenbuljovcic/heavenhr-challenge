@@ -50,4 +50,4 @@ FriendListItem.defaultProps = {
   gender: '',
 }
 
-export default FriendListItem
+export default FriendListItem;

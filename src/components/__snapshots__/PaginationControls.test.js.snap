@@ -1,0 +1,64 @@
+exports[`Pagination Controls should match it's empty snapshot 1`] = `
+<div>
+  <ul
+    className="undefined pagination">
+    <li
+      className="undefined">
+      <button
+        aria-label="Backward"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-fast-backward" />
+      </button>
+    </li>
+    <li
+      className="undefined">
+      <button
+        aria-label="Previous"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-step-backward" />
+      </button>
+    </li>
+    <li
+      className="">
+      <button
+        aria-label="Next"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-step-forward" />
+      </button>
+    </li>
+    <li
+      className="">
+      <button
+        aria-label="Forward"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-fast-forward" />
+      </button>
+    </li>
+  </ul>
+  <p
+    className={undefined}>
+    Showing 
+    <strong>
+      0
+       - 
+      0
+    </strong>
+     out of 
+    <strong>
+      0
+    </strong>
+  </p>
+</div>
+`;

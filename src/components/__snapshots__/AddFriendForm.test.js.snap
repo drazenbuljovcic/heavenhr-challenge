@@ -1,0 +1,47 @@
+exports[`Form for adding new friends should match it's empty snapshot 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}>
+  <input
+    autoFocus="true"
+    className="form-control"
+    onChange={[Function]}
+    placeholder="Name of your friend"
+    type="text"
+    value="" />
+  <div
+    className="">
+    <input
+      id="gender-male"
+      name="gender"
+      onChange={[Function]}
+      type="radio"
+      value="male" />
+    <label
+      htmlFor="gender-male">
+      <i
+        aria-hidden="true"
+        className="btn btn-default fa fa-male" />
+    </label>
+    <input
+      id="gender-female"
+      name="gender"
+      onChange={[Function]}
+      type="radio"
+      value="female" />
+    <label
+      htmlFor="gender-female">
+      <i
+        aria-hidden="true"
+        className="btn btn-default fa fa-female" />
+    </label>
+  </div>
+  <button
+    className="btn btn-success"
+    type="submit">
+    <i
+      aria-hidden="true"
+      className="fa fa-check" />
+  </button>
+</form>
+`;
