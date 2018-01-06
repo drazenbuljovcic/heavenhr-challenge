@@ -6,17 +6,20 @@ const initialState = {
     {
       id: Math.round(Math.random() * 10000000),
       name: 'Theodore Roosevelt',
-      starred: true
+      starred: true,
+      gender: undefined,
     },
     {
       id: Math.round(Math.random() * 10000000),
       name: 'Abraham Lincoln',
-      starred: false
+      starred: false,
+      gender: undefined,
     },
     {
       id: Math.round(Math.random() * 10000000),
       name: 'George Washington',
-      starred: false
+      starred: false,
+      gender: undefined,
     },
     {
       id: Math.round(Math.random() * 10000000),

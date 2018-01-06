@@ -1,9 +1,16 @@
 import * as types from '../constants/ActionTypes';
+import * as genderTypes from '../constants/GenderTypes';
 
 export function addFriend(name, gender) {
+  if (!name) { return; }
+  if (gender && !(gender === genderTypes.MALE || gender === genderTypes.FEMALE)) { return; }
+
+  const payload = { name };
+  if(gender) { payload.gender = gender };
+
   return {
     type: types.ADD_FRIEND,
-    payload: {name, gender}
+    payload: payload,
   };
 }
 
@@ -22,7 +29,7 @@ export function starFriend(id) {
 }
 
 export function refreshPaginationInfo(friendList, itemCount) {
-  return { type: types.REFRESH_PAGINATION, payload: { friendList, itemCount } }
+  return { type: types.REFRESH_PAGINATION, payload: { friendList, itemCount } };
 }
 
 export function changePaginationPage(pageNumber) {
