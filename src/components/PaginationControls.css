@@ -1,0 +1,29 @@
+:local(.pagination) {
+  display: flex;
+  justify-content: center;
+}
+
+:local(.invisiblePaginationItem) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+:local(.invisibleShrunkenPaginationItem) {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+:local(.activePage) {
+  color: green;
+  font-size: 1.65em;
+  font-weight: 700;
+  padding: 0 12px;
+}
+
+:local(.paginationLegend) {
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+}
