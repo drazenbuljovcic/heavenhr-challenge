@@ -29,7 +29,8 @@ class FriendList extends Component {
     const nextFriendsList = nextProps.friendListInfo.friendsById;
     const oldFriendsList = this.props.friendListInfo.friendsById;
 
-    if(nextProps.friendListInfo.paginationInfo.totalPages === nextProps.friendListInfo.paginationInfo.currentPage && nextProps.friendListInfo.paginationInfo.totalPages > 1) {
+    const { totalPages, currentPage } = nextProps.friendListInfo.paginationInfo;
+    if(totalPages === currentPage && !!currentPage) {
       this.handlePaginationToPreviousPage(); return;
     }
 
@@ -65,7 +66,7 @@ class FriendList extends Component {
     const { friendsById, paginationInfo } = this.props.friendListInfo;
     const { itemCount, currentPageFriendsList } = paginationInfo;
 
-    const friendsList = !itemCount ? friendsById : currentPageFriendsList;
+    const friendsList = friendsById.length <= itemCount ? friendsById : currentPageFriendsList;
     return (
       <div>
         <ul className={styles.friendList}>
