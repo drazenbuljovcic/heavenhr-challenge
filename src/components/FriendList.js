@@ -66,7 +66,12 @@ class FriendList extends Component {
     const { friendsById, paginationInfo } = this.props.friendListInfo;
     const { itemCount, currentPageFriendsList } = paginationInfo;
 
-    const friendsList = friendsById.length <= itemCount ? friendsById : currentPageFriendsList;
+    const getFriendList = () => {
+      if (!itemCount) { return friendsById; };
+      return friendsById.length <= itemCount ? friendsById : currentPageFriendsList;
+    }
+    const friendsList = getFriendList();
+
     return (
       <div>
         <ul className={styles.friendList}>
@@ -84,7 +89,7 @@ class FriendList extends Component {
             })
           }
         </ul>
-        { friendsById.length > itemCount && (
+        { friendsById.length > itemCount && !!itemCount &&(
           <PaginationControls
             totalPages={paginationInfo.totalPages}
             currentPage={paginationInfo.currentPage}

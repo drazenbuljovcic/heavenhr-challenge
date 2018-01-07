@@ -9,14 +9,14 @@ import { times } from 'lodash';
 const PaginationControls = props => (
   <div>
     <ul className={`${styles.pagination} pagination`}>
-      <li className={classnames({
+      <li aria-hidden={props.currentPage === 0} className={classnames({
         [styles.invisiblePaginationItem]: props.currentPage === 0,
       })}>
         <button className="btn btn-default" aria-label="Backward" onClick={props.handlePaginationToFirstPage}>
           <i className="fa fa-fast-backward" aria-hidden="true"></i>
         </button>
       </li>
-      <li className={classnames({
+      <li aria-hidden={props.currentPage === 0} className={classnames({
         [styles.invisiblePaginationItem]: props.currentPage === 0,
       })}>
         <button className="btn btn-default" aria-label="Previous" onClick={props.handlePaginationToPreviousPage}>
@@ -32,7 +32,7 @@ const PaginationControls = props => (
           return (<li key={i} className={classnames({
             [styles.invisibleShrunkenPaginationItem]: checkVisibility(i),
           })}>
-            <button className={classnames("btn btn-default", {
+            <button aria-label={`Page ${i + 1}`} className={classnames("btn btn-default", {
               [styles.activePage]: i === props.currentPage,
             })} onClick={props.handlePaginationToPageNumber.bind(null, i)}>
               {i + 1}
@@ -40,14 +40,14 @@ const PaginationControls = props => (
           </li>
         )})
       }
-      <li className={classnames({
+      <li aria-hidden={props.currentPage + 1 === props.totalPages} className={classnames({
         [styles.invisiblePaginationItem]: props.currentPage + 1 === props.totalPages,
       })}>
         <button className="btn btn-default" aria-label="Next" onClick={props.handlePaginationToNextPage}>
         <i className="fa fa-step-forward" aria-hidden="true"></i>
         </button>
       </li>
-      <li className={classnames({
+      <li aria-hidden={props.currentPage + 1 === props.totalPages} className={classnames({
         [styles.invisiblePaginationItem]: props.currentPage + 1 === props.totalPages,
       })}>
         <button className="btn btn-default" aria-label="Forward" onClick={props.handlePaginationToLastPage}>
@@ -68,6 +68,6 @@ PaginationControls.propTypes = {
   handlePaginationToNextPage: PropTypes.func.isRequired,
   handlePaginationToPreviousPage: PropTypes.func.isRequired,
   handlePaginationToPageNumber: PropTypes.func.isRequired,
-}
+};
 
 export default PaginationControls;

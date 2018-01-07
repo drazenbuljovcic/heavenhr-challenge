@@ -1,6 +1,629 @@
+exports[`Friend List should display a matching number of items to page item count 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FriendList
+    actions={
+        Object {
+            "deleteFriend": [Function],
+            "starFriend": [Function],
+          }
+    }
+    changePaginationPage={[Function]}
+    friendListInfo={
+        Object {
+            "friendsById": Array [
+              Object {
+                "gender": "male",
+                "id": 1,
+                "name": "Male Friend",
+                "starred": true,
+              },
+              Object {
+                "gender": "female",
+                "id": 2,
+                "name": "Female Friend",
+                "starred": false,
+              },
+              Object {
+                "gender": "male",
+                "id": 3,
+                "name": "Mutual Friend",
+                "starred": false,
+              },
+            ],
+            "paginationInfo": Object {
+              "currentPage": 0,
+              "currentPageFriendsList": Array [
+                Object {
+                  "gender": "male",
+                  "id": 1,
+                  "name": "Male Friend",
+                  "starred": true,
+                },
+                Object {
+                  "gender": "female",
+                  "id": 2,
+                  "name": "Female Friend",
+                  "starred": false,
+                },
+              ],
+              "endingItemIndex": 0,
+              "itemCount": 2,
+              "startingItemIndex": 0,
+              "totalPages": 0,
+            },
+          }
+    }
+    listItemCountPerPage={2}
+    refreshPaginationInfo={[Function]} />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <ul
+          className={undefined}>
+          <FriendListItem
+                    deleteFriend={[Function]}
+                    gender="male"
+                    id={1}
+                    name="Male Friend"
+                    starFriend={[Function]}
+                    starred={true} />
+          <FriendListItem
+                    deleteFriend={[Function]}
+                    gender="female"
+                    id={2}
+                    name="Female Friend"
+                    starFriend={[Function]}
+                    starred={false} />
+</ul>,
+        <PaginationControls
+          currentPage={0}
+          endingItemIndex={0}
+          handlePaginationToFirstPage={[Function]}
+          handlePaginationToLastPage={[Function]}
+          handlePaginationToNextPage={[Function]}
+          handlePaginationToPageNumber={[Function]}
+          handlePaginationToPreviousPage={[Function]}
+          startingItemIndex={0}
+          totalCount={3}
+          totalPages={0} />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <FriendListItem
+              deleteFriend={[Function]}
+              gender="male"
+              id={1}
+              name="Male Friend"
+              starFriend={[Function]}
+              starred={true} />,
+            <FriendListItem
+              deleteFriend={[Function]}
+              gender="female"
+              id={2}
+              name="Female Friend"
+              starFriend={[Function]}
+              starred={false} />,
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "class",
+            "props": Object {
+              "deleteFriend": [Function],
+              "gender": "male",
+              "id": 1,
+              "name": "Male Friend",
+              "starFriend": [Function],
+              "starred": true,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "class",
+            "props": Object {
+              "deleteFriend": [Function],
+              "gender": "female",
+              "id": 2,
+              "name": "Female Friend",
+              "starFriend": [Function],
+              "starred": false,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "ul",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "currentPage": 0,
+          "endingItemIndex": 0,
+          "handlePaginationToFirstPage": [Function],
+          "handlePaginationToLastPage": [Function],
+          "handlePaginationToNextPage": [Function],
+          "handlePaginationToPageNumber": [Function],
+          "handlePaginationToPreviousPage": [Function],
+          "startingItemIndex": 0,
+          "totalCount": 3,
+          "totalPages": 0,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <ul
+            className={undefined}>
+            <FriendListItem
+                        deleteFriend={[Function]}
+                        gender="male"
+                        id={1}
+                        name="Male Friend"
+                        starFriend={[Function]}
+                        starred={true} />
+            <FriendListItem
+                        deleteFriend={[Function]}
+                        gender="female"
+                        id={2}
+                        name="Female Friend"
+                        starFriend={[Function]}
+                        starred={false} />
+</ul>,
+          <PaginationControls
+            currentPage={0}
+            endingItemIndex={0}
+            handlePaginationToFirstPage={[Function]}
+            handlePaginationToLastPage={[Function]}
+            handlePaginationToNextPage={[Function]}
+            handlePaginationToPageNumber={[Function]}
+            handlePaginationToPreviousPage={[Function]}
+            startingItemIndex={0}
+            totalCount={3}
+            totalPages={0} />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <FriendListItem
+                deleteFriend={[Function]}
+                gender="male"
+                id={1}
+                name="Male Friend"
+                starFriend={[Function]}
+                starred={true} />,
+              <FriendListItem
+                deleteFriend={[Function]}
+                gender="female"
+                id={2}
+                name="Female Friend"
+                starFriend={[Function]}
+                starred={false} />,
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "class",
+              "props": Object {
+                "deleteFriend": [Function],
+                "gender": "male",
+                "id": 1,
+                "name": "Male Friend",
+                "starFriend": [Function],
+                "starred": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "class",
+              "props": Object {
+                "deleteFriend": [Function],
+                "gender": "female",
+                "id": 2,
+                "name": "Female Friend",
+                "starFriend": [Function],
+                "starred": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "ul",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "currentPage": 0,
+            "endingItemIndex": 0,
+            "handlePaginationToFirstPage": [Function],
+            "handlePaginationToLastPage": [Function],
+            "handlePaginationToNextPage": [Function],
+            "handlePaginationToPageNumber": [Function],
+            "handlePaginationToPreviousPage": [Function],
+            "startingItemIndex": 0,
+            "totalCount": 3,
+            "totalPages": 0,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Friend List should display all friends if item count is 0 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FriendList
+    actions={
+        Object {
+            "deleteFriend": [Function],
+            "starFriend": [Function],
+          }
+    }
+    changePaginationPage={[Function]}
+    friendListInfo={
+        Object {
+            "friendsById": Array [
+              Object {
+                "gender": "male",
+                "id": 1,
+                "name": "Male Friend",
+                "starred": true,
+              },
+              Object {
+                "gender": "female",
+                "id": 2,
+                "name": "Female Friend",
+                "starred": false,
+              },
+              Object {
+                "gender": "male",
+                "id": 3,
+                "name": "Mutual Friend",
+                "starred": false,
+              },
+            ],
+            "paginationInfo": Object {
+              "itemCount": 0,
+            },
+          }
+    }
+    listItemCountPerPage={2}
+    refreshPaginationInfo={[Function]} />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <ul
+          className={undefined}>
+          <FriendListItem
+                    deleteFriend={[Function]}
+                    gender="male"
+                    id={1}
+                    name="Male Friend"
+                    starFriend={[Function]}
+                    starred={true} />
+          <FriendListItem
+                    deleteFriend={[Function]}
+                    gender="female"
+                    id={2}
+                    name="Female Friend"
+                    starFriend={[Function]}
+                    starred={false} />
+          <FriendListItem
+                    deleteFriend={[Function]}
+                    gender="male"
+                    id={3}
+                    name="Mutual Friend"
+                    starFriend={[Function]}
+                    starred={false} />
+</ul>,
+        false,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <FriendListItem
+              deleteFriend={[Function]}
+              gender="male"
+              id={1}
+              name="Male Friend"
+              starFriend={[Function]}
+              starred={true} />,
+            <FriendListItem
+              deleteFriend={[Function]}
+              gender="female"
+              id={2}
+              name="Female Friend"
+              starFriend={[Function]}
+              starred={false} />,
+            <FriendListItem
+              deleteFriend={[Function]}
+              gender="male"
+              id={3}
+              name="Mutual Friend"
+              starFriend={[Function]}
+              starred={false} />,
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "class",
+            "props": Object {
+              "deleteFriend": [Function],
+              "gender": "male",
+              "id": 1,
+              "name": "Male Friend",
+              "starFriend": [Function],
+              "starred": true,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "class",
+            "props": Object {
+              "deleteFriend": [Function],
+              "gender": "female",
+              "id": 2,
+              "name": "Female Friend",
+              "starFriend": [Function],
+              "starred": false,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "2",
+            "nodeType": "class",
+            "props": Object {
+              "deleteFriend": [Function],
+              "gender": "male",
+              "id": 3,
+              "name": "Mutual Friend",
+              "starFriend": [Function],
+              "starred": false,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "ul",
+      },
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <ul
+            className={undefined}>
+            <FriendListItem
+                        deleteFriend={[Function]}
+                        gender="male"
+                        id={1}
+                        name="Male Friend"
+                        starFriend={[Function]}
+                        starred={true} />
+            <FriendListItem
+                        deleteFriend={[Function]}
+                        gender="female"
+                        id={2}
+                        name="Female Friend"
+                        starFriend={[Function]}
+                        starred={false} />
+            <FriendListItem
+                        deleteFriend={[Function]}
+                        gender="male"
+                        id={3}
+                        name="Mutual Friend"
+                        starFriend={[Function]}
+                        starred={false} />
+</ul>,
+          false,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <FriendListItem
+                deleteFriend={[Function]}
+                gender="male"
+                id={1}
+                name="Male Friend"
+                starFriend={[Function]}
+                starred={true} />,
+              <FriendListItem
+                deleteFriend={[Function]}
+                gender="female"
+                id={2}
+                name="Female Friend"
+                starFriend={[Function]}
+                starred={false} />,
+              <FriendListItem
+                deleteFriend={[Function]}
+                gender="male"
+                id={3}
+                name="Mutual Friend"
+                starFriend={[Function]}
+                starred={false} />,
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "class",
+              "props": Object {
+                "deleteFriend": [Function],
+                "gender": "male",
+                "id": 1,
+                "name": "Male Friend",
+                "starFriend": [Function],
+                "starred": true,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "class",
+              "props": Object {
+                "deleteFriend": [Function],
+                "gender": "female",
+                "id": 2,
+                "name": "Female Friend",
+                "starFriend": [Function],
+                "starred": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "class",
+              "props": Object {
+                "deleteFriend": [Function],
+                "gender": "male",
+                "id": 3,
+                "name": "Mutual Friend",
+                "starFriend": [Function],
+                "starred": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "ul",
+        },
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`Friend List should match it's empty snapshot 1`] = `
 <div>
-  <ul
-    className={undefined} />
+  <ul />
 </div>
 `;

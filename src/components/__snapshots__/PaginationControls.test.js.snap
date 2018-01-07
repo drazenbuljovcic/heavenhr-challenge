@@ -1,8 +1,9 @@
-exports[`Pagination Controls should match it's empty snapshot 1`] = `
+exports[`Pagination Controls should display legend on the bottom 1`] = `
 <div>
   <ul
     className="undefined pagination">
     <li
+      aria-hidden={true}
       className="undefined">
       <button
         aria-label="Backward"
@@ -14,6 +15,7 @@ exports[`Pagination Controls should match it's empty snapshot 1`] = `
       </button>
     </li>
     <li
+      aria-hidden={true}
       className="undefined">
       <button
         aria-label="Previous"
@@ -25,6 +27,7 @@ exports[`Pagination Controls should match it's empty snapshot 1`] = `
       </button>
     </li>
     <li
+      aria-hidden={false}
       className="">
       <button
         aria-label="Next"
@@ -36,6 +39,7 @@ exports[`Pagination Controls should match it's empty snapshot 1`] = `
       </button>
     </li>
     <li
+      aria-hidden={false}
       className="">
       <button
         aria-label="Forward"
@@ -47,8 +51,251 @@ exports[`Pagination Controls should match it's empty snapshot 1`] = `
       </button>
     </li>
   </ul>
-  <p
-    className={undefined}>
+  <p>
+    Showing 
+    <strong>
+      2
+       - 
+      3
+    </strong>
+     out of 
+    <strong>
+      5
+    </strong>
+  </p>
+</div>
+`;
+
+exports[`Pagination Controls should match it's empty snapshot 1`] = `
+<div>
+  <ul
+    className="undefined pagination">
+    <li
+      aria-hidden={true}
+      className="undefined">
+      <button
+        aria-label="Backward"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-fast-backward" />
+      </button>
+    </li>
+    <li
+      aria-hidden={true}
+      className="undefined">
+      <button
+        aria-label="Previous"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-step-backward" />
+      </button>
+    </li>
+    <li
+      aria-hidden={false}
+      className="">
+      <button
+        aria-label="Next"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-step-forward" />
+      </button>
+    </li>
+    <li
+      aria-hidden={false}
+      className="">
+      <button
+        aria-label="Forward"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-fast-forward" />
+      </button>
+    </li>
+  </ul>
+  <p>
+    Showing 
+    <strong>
+      0
+       - 
+      0
+    </strong>
+     out of 
+    <strong>
+      0
+    </strong>
+  </p>
+</div>
+`;
+
+exports[`Pagination Controls should not display next and forward page buttons if pagination is on last page 1`] = `
+<div>
+  <ul
+    className="undefined pagination">
+    <li
+      aria-hidden={false}
+      className="">
+      <button
+        aria-label="Backward"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-fast-backward" />
+      </button>
+    </li>
+    <li
+      aria-hidden={false}
+      className="">
+      <button
+        aria-label="Previous"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-step-backward" />
+      </button>
+    </li>
+    <li
+      className=""
+      key="0">
+      <button
+        aria-label="Page 1"
+        className="btn btn-default"
+        onClick={[Function]}>
+        1
+      </button>
+    </li>
+    <li
+      className=""
+      key="1">
+      <button
+        aria-label="Page 2"
+        className="btn btn-default undefined"
+        onClick={[Function]}>
+        2
+      </button>
+    </li>
+    <li
+      aria-hidden={true}
+      className="undefined">
+      <button
+        aria-label="Next"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-step-forward" />
+      </button>
+    </li>
+    <li
+      aria-hidden={true}
+      className="undefined">
+      <button
+        aria-label="Forward"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-fast-forward" />
+      </button>
+    </li>
+  </ul>
+  <p>
+    Showing 
+    <strong>
+      0
+       - 
+      0
+    </strong>
+     out of 
+    <strong>
+      0
+    </strong>
+  </p>
+</div>
+`;
+
+exports[`Pagination Controls should not display previous and first page buttons if pagination is on first page 1`] = `
+<div>
+  <ul
+    className="undefined pagination">
+    <li
+      aria-hidden={true}
+      className="undefined">
+      <button
+        aria-label="Backward"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-fast-backward" />
+      </button>
+    </li>
+    <li
+      aria-hidden={true}
+      className="undefined">
+      <button
+        aria-label="Previous"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-step-backward" />
+      </button>
+    </li>
+    <li
+      className=""
+      key="0">
+      <button
+        aria-label="Page 1"
+        className="btn btn-default undefined"
+        onClick={[Function]}>
+        1
+      </button>
+    </li>
+    <li
+      className=""
+      key="1">
+      <button
+        aria-label="Page 2"
+        className="btn btn-default"
+        onClick={[Function]}>
+        2
+      </button>
+    </li>
+    <li
+      aria-hidden={false}
+      className="">
+      <button
+        aria-label="Next"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-step-forward" />
+      </button>
+    </li>
+    <li
+      aria-hidden={false}
+      className="">
+      <button
+        aria-label="Forward"
+        className="btn btn-default"
+        onClick={[Function]}>
+        <i
+          aria-hidden="true"
+          className="fa fa-fast-forward" />
+      </button>
+    </li>
+  </ul>
+  <p>
     Showing 
     <strong>
       0

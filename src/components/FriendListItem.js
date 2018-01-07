@@ -21,14 +21,16 @@ class FriendListItem extends Component {
           </div>
         </div>
         <div className={styles.friendActions}>
-          <button className={`btn btn-default ${styles.btnAction}`}
+          <button aria-label="Star Friend"
+                  className={`btn btn-default ${styles.btnAction}`}
                   onClick={() => this.props.starFriend(this.props.id)}>
             <i className={classnames('fa', {
               'fa-star': this.props.starred,
               'fa-star-o': !this.props.starred
             })} />
           </button>
-          <button className={`btn btn-default ${styles.btnAction}`}
+          <button aria-label="Delete Friend"
+                  className={`btn btn-default ${styles.btnAction}`}
                   onClick={() => this.props.deleteFriend(this.props.id)}>
             <i className="fa fa-trash" />
           </button>
@@ -43,7 +45,8 @@ FriendListItem.propTypes = {
   name: PropTypes.string.isRequired,
   gender: PropTypes.string,
   starred: PropTypes.bool,
-  starFriend: PropTypes.func.isRequired
+  starFriend: PropTypes.func.isRequired,
+  deleteFriend: PropTypes.func.isRequired,
 };
 
 FriendListItem.defaultProps = {

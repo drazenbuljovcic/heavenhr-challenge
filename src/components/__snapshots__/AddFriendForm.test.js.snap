@@ -5,6 +5,7 @@ exports[`Form for adding new friends should match it's empty snapshot 1`] = `
   <input
     autoFocus="true"
     className="form-control"
+    name="name"
     onChange={[Function]}
     placeholder="Name of your friend"
     type="text"

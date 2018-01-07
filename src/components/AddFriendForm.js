@@ -48,6 +48,7 @@ class AddFriendForm extends Component {
         <input
           type="text"
           autoFocus="true"
+          name="name"
           ref={input => this.input = input}
           className={classnames('form-control', styles.addFriendInput)}
           placeholder="Name of your friend"

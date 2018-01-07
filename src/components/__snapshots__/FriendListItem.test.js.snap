@@ -1,11 +1,45 @@
-exports[`A Friend List Item should match it's empty snapshot 1`] = `
-<li
-  className={undefined}>
-  <div
-    className={undefined}>
+exports[`A Friend List Item should display gender icon if gender is specified 1`] = `
+<li>
+  <div>
     <div>
       <span>
-        
+        Friend
+      </span>
+      <i
+        aria-hidden="true"
+        className="fa fa-male" />
+    </div>
+    <div>
+      <small>
+        xx friends in common
+      </small>
+    </div>
+  </div>
+  <div>
+    <button
+      aria-label="Star Friend"
+      className="btn btn-default undefined"
+      onClick={[Function]}>
+      <i
+        className="fa fa-star-o" />
+    </button>
+    <button
+      aria-label="Delete Friend"
+      className="btn btn-default undefined"
+      onClick={[Function]}>
+      <i
+        className="fa fa-trash" />
+    </button>
+  </div>
+</li>
+`;
+
+exports[`A Friend List Item should display the friend name 1`] = `
+<li>
+  <div>
+    <div>
+      <span>
+        Friend
       </span>
       <i
         aria-hidden="true"
@@ -17,15 +51,50 @@ exports[`A Friend List Item should match it's empty snapshot 1`] = `
       </small>
     </div>
   </div>
-  <div
-    className={undefined}>
+  <div>
     <button
+      aria-label="Star Friend"
       className="btn btn-default undefined"
       onClick={[Function]}>
       <i
         className="fa fa-star-o" />
     </button>
     <button
+      aria-label="Delete Friend"
+      className="btn btn-default undefined"
+      onClick={[Function]}>
+      <i
+        className="fa fa-trash" />
+    </button>
+  </div>
+</li>
+`;
+
+exports[`A Friend List Item should match it's empty snapshot 1`] = `
+<li>
+  <div>
+    <div>
+      <span />
+      <i
+        aria-hidden="true"
+        className="fa" />
+    </div>
+    <div>
+      <small>
+        xx friends in common
+      </small>
+    </div>
+  </div>
+  <div>
+    <button
+      aria-label="Star Friend"
+      className="btn btn-default undefined"
+      onClick={[Function]}>
+      <i
+        className="fa fa-star-o" />
+    </button>
+    <button
+      aria-label="Delete Friend"
       className="btn btn-default undefined"
       onClick={[Function]}>
       <i
